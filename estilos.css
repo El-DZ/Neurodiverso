@@ -7,8 +7,8 @@
 body {
     font-family: "Poppins", sans-serif;
     --color1: #FFF;
-    --color2: #d9b99b;
-    --color3: #fff0db;
+    --color2: #e2b973;
+    --color3: #b39377;
 
 }
 
@@ -100,7 +100,7 @@ body {
 #check {
     display: none;
 }
-
+/*media query @media screen and (max-width: 750px) para hacer responsive el menú de navegación.*/
 @media(max-width: 750px) {
     .nav-bar {
         justify-content: flex-start;
@@ -179,8 +179,11 @@ body {
     .close-menu {
         display: block;
     }
-
+    /*pseudo-clase :checked para mostrar las opciones del menú hamburguesa cuando se hace clic en el icono.*/
     #check:checked~.menu {
         left: 0;
+    }
+    #check:not(:checked) ~ .menu {
+        left: -100%;
     }
 }
