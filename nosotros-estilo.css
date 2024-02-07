@@ -9,7 +9,6 @@ body {
     --color1: #FFF;
     --color2: #e2b973;
     --color3: #b39377;
-
 }
 
 .nav-bar {
@@ -25,19 +24,11 @@ body {
     padding: 12px 20px;
 }
 
-.logo img {
-    width: 40px;
-}
-
-#logo
-{
-    margin-right: 5em;
-}
 .menu {
     display: flex;
     justify-content: space-between;
     flex-grow: 0.75;
-    padding-left: 0
+    padding-left: 0;
 }
 
 #menu-title {
@@ -70,11 +61,11 @@ body {
 
 .menu li a:hover::after {
     width: 100%;
-    background: var(--color1);
+    background: var(--color3);
 }
 
 .menu li a:hover {
-    color: var(--color1);
+    color: var(--color3);
 }
 
 .open-menu,
@@ -100,15 +91,11 @@ body {
 #check {
     display: none;
 }
-/*media query @media screen and (max-width: 750px) para hacer responsive el menú de navegación.*/
+
+/* Media query para hacer responsive el menú de navegación */
 @media(max-width: 750px) {
     .nav-bar {
         justify-content: flex-start;
-    }
-
-    #logo
-    {
-        margin-left: 16em;
     }
 
     .menu {
@@ -167,11 +154,11 @@ body {
 
     .menu li a:hover::after {
         width: 100%;
-        background: var(--color1);
+        background: var(--color3);
     }
 
     .menu li a:hover {
-        color: var(--color1);
+        color: var(--color3);
         padding: 10px 0;
     }
 
@@ -179,26 +166,36 @@ body {
     .close-menu {
         display: block;
     }
-    /*pseudo-clase :checked para mostrar las opciones del menú hamburguesa cuando se hace clic en el icono.*/
+
+    /* Pseudo-clase :checked para mostrar las opciones del menú hamburguesa cuando se hace clic en el icono */
     #check:checked~.menu {
         left: 0;
     }
+
     #check:not(:checked) ~ .menu {
         left: -100%;
     }
 }
-/* Estilos para la sección de ejercicios */
+
+/* Estilos para las secciones */
 .exercise-section {
-    border: 2px solid #ccc; /* Grosor y color del borde */
-    border-radius: 8px; /* Radio de los bordes */
-    margin: 10px; /* Espacio entre las secciones */
-    width: calc(80% - 20px); /* Ancho de las secciones */
-    height: 550px; /* Altura de las secciones */
+    width: calc(50% - 20px); /* Ancho de las secciones */
     box-sizing: border-box; /* Tamaño total de la sección incluyendo los bordes */
     overflow: hidden; /* Evita que el contenido sobresalga del contenedor */
     display: inline-block; /* Hace que las secciones se coloquen una al lado de la otra */
     vertical-align: top; /* Alinea las secciones en la parte superior */
 }
+
+/* Estilos para las secciones impares */
+.exercise-section:nth-child(odd) {
+    float: left;
+}
+
+/* Estilos para las secciones pares */
+.exercise-section:nth-child(even) {
+    float: right;
+}
+
 /* Estilos para el título de la sección */
 .exercise-section h2 {
     padding: 10px;
@@ -208,59 +205,34 @@ body {
 
 /* Estilos para el contenido de la sección */
 .exercise-content {
-    padding: 20px; /* Aumenta el padding */
+    padding: 10px; /* Reducir el padding */
 }
 
-/* Estilos para las imágenes dentro del contenido del ejercicio */
-.exercise-content img {
-    width: 100%; /* Establece el ancho de la imagen al 100% */
-    height: auto; /* Permite que la altura se ajuste automáticamente */
-    display: block; /* Asegura que la imagen no tenga espacios en blanco debajo */
-    max-width: 100%; /* Asegura que la imagen no se extienda más allá de su tamaño original */
+/* Espaciador */
+.spacer {
+    height: 20px;
+}
+/* Estilos para el footer */
+footer {
+    margin-top: auto; 
+    background-color: var(--color2);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    clear: both;
 }
 
-/* Efecto hover para las imágenes */
-.exercise-content img:hover {
-    transform: scale(1.1); /* Aumenta la escala al 110% */
+/* Estilos para los iconos de redes sociales en el footer */
+footer .social-icons a {
+    color: #fff; /* Color de los íconos */
+    font-size: 24px; /* Tamaño de los íconos */
+    margin: 0 10px; /* Espaciado entre los íconos */
 }
-
-.exercise-content p {
-    margin-top: 10px;
+/* Agrega un margen superior al primer elemento después del footer */
+.box-container:first-child {
+    margin-top: 20px;
 }
-
-/* Contenedor para las secciones de ejercicios */
-.exercises-container {
-    display: grid; /* Usamos un grid layout */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    grid-gap: 10px; /* Espacio entre las columnas */
+/* Agrega un margen superior al contenido debajo de la barra de navegación */
+.box-container {
+    margin-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
 }
-/* Estilos para el contenedor centrado de ejercicios */
-.exercises-wrapper {
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    margin-top: 20px; /* Ajusta el valor según sea necesario */
-}
-
-/* Contenedor para las secciones de ejercicios */
-.exercises-container {
-    display: grid; /* Usamos un grid layout */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    grid-gap: 10px; /* Espacio entre las columnas */
-}
-        /* Estilos para el footer */
-        footer {
-
-                margin-top: auto; 
-                background-color: var(--color2);
-                color: white;
-                padding: 10px 0;
-                text-align: center;
-
-        }
-        
-        /* Estilos para los iconos de redes sociales en el footer */
-        footer .social-icons a {
-            color: #fff; /* Color de los íconos */
-            font-size: 24px; /* Tamaño de los íconos */
-            margin: 0 10px; /* Espaciado entre los íconos */
-        }
